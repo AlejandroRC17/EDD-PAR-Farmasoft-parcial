@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block title %}
-Inicio
+	Inicio
 {% endblock %}
-{% block content %}
-	<h1> Sistema de inscripcion </h1>
-	<h2> Bienvenido!</h2>
-	<p><br/>
-		Por favor <a href="/login">inicia sesion</a> o <a href="/register">registrate</a> para poder utilizar la web
-	</p>
+{% block page_content %}
+
+<div class="jumbotron">
+	<div class="container">
+  		<h1>Bienvenido!</h1>
+  		<p>Por favor registrate o inicia sesion para utilizar la web</p>
+  		<p> <a class="btn btn-success btn-lg" href="/login" role="button">Iniciar sesion</a>&nbsp;&nbsp;
+  			<a class="btn btn-success btn-lg" href="/register" role="button">Registrarse</a> </p>
+</div>
 {% endblock %}

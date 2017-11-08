@@ -4,7 +4,6 @@
 
 {% block page_content %}
 <div class="page-header">    
-    <h1>Bienvenido a FarmaSoft</h1>
 </div>
 
 <div class="panel panel-primary">
@@ -20,6 +19,15 @@
       <td><b>Cantidad</b></td>
       <td><b>Precio</b></td>
     </tr>
+    {% for item in listarventas %}
+    <tr>
+        <td>{{ item.codigo }}</td>
+        <td>{{ item.cliente }}</td>
+        <td>{{ item.producto }}</td>
+        <td>{{ item.cantidad }}</td>
+        <td>$ {{ item.precio }}</td>
+    </tr>
+    {% endfor %}
     
   </table>
 </div>

@@ -3,11 +3,7 @@
 {% block head %}
 {{ super() }}
 	<link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico')}}">
-{% block styles %}
-{{super()}}
-	<link rel="stylesheet"
-      href="{{url_for('.static', filename='estilos.css')}}">
-{% endblock %}
+
 {% endblock %}
 {% block title %}base{% endblock %}
 
@@ -22,7 +18,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/ult_ventas">
+      <a class="navbar-brand" href="/home">
       	<img alt="Brand" src="/static/favicon.ico" width="20">
       </a>
     </div>
@@ -30,8 +26,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/ult_ventas">Ultimas Ventas <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">reservado</a></li>        
+        <li class="active"><a href="/ultventas">Ultimas Ventas <span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Busqueda <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/busquedaclientes">Por cliente</a></li>
+            <li><a href="/busquedaproductos">Por producto</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/masvendidos">Mas vendidos</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/clientesregulares">Clientes que mas gastaron</a></li>
+          </ul>
+        </li>
+       
        </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/logout">Cerrar Sesion</a></li>
@@ -42,6 +49,14 @@
 {% endblock %}
 
 {% block content %}
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container">
+    <p class="navbar-text navbar-right">IFTS N°18</p>
+    <p class="navbar-text navbar-left">Parcial EDD-PAR Alejandro Ramos Crespo</p>
+
+  </div>
+</nav>
+
 <div class="container">
     {% for message in get_flashed_messages() %}
     <div class="alert alert-warning">

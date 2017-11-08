@@ -1,9 +1,21 @@
 {% extends "baseingresado.html" %}
 
-{% block title %}home{% endblock %}
+{% block title %}
+	Inicio
+{% endblock %}
 
 {% block page_content %}
-<div class="page-header">    
-    <h1>bienvenido usuario</h1>
+
+<div class="jumbotron">
+	<h1>Bienvenido a Farmasoft! {{usuario}}</h1>
+		<p> Que desea hacer?
+			<div class="list-group">
+				<a href="/busquedaclientes" class="list-group-item">Buscar clientes</a>
+				<a href="/busquedaproductos" class="list-group-item">Buscar productos</a>
+ 	 			<a href="/masvendidos" class="list-group-item">Mas vendidos</a>
+ 				<a href="/clientesregulares" class="list-group-item">Los que mas gastaron</a>
+ 				<a href="/ultventas" class="list-group-item">Ultimas ventas</a>
+ 		</p>	
 </div>
+
 {% endblock %}

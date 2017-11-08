@@ -3,11 +3,7 @@
 {% block head %}
 {{ super() }}
 	<link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico')}}">
-{% block styles %}
-{{super()}}
-	<link rel="stylesheet"
-      href="{{url_for('.static', filename='estilos.css')}}">
-{% endblock %}
+
 {% endblock %}
 {% block title %}base{% endblock %}
 
@@ -42,6 +38,15 @@
 {% endblock %}
 
 {% block content %}
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container">
+    <p class="navbar-text navbar-right">IFTS N°18</p>
+    <p class="navbar-text navbar-leftt">Parcial EDD-PAR Alejandro Ramos Crespo</p>
+
+  </div>
+</nav>
+
 <div class="container">
     {% for message in get_flashed_messages() %}
     <div class="alert alert-warning">

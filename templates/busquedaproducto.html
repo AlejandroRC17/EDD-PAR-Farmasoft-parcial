@@ -1,0 +1,45 @@
+{% extends "baseingresado.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}
+    Buscar productos
+{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Buscar producto</h1>   
+    {{ wtf.quick_form(form) }}
+    <br>
+    <p1>{{ cliente }}</p1>
+    <u1>
+    {% for x in clientes %}
+    <li><a href="/busquedaproducto/{{ x }}">{{ x }}</a></li>
+    {% endfor %}
+    </u1>
+</div>
+
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">{{producto}}</div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+        <td><b>Producto</b></td>
+        <td><b>Cliente</b></td>
+        <td><b>Cantidad</b></td>
+        <td><b>Precio</b></td>
+        <td><b>Codigo</b></td>
+    </tr>
+        {% for item in listar %}
+    <tr>
+        <td>{{ item.producto }}</td>
+        <td>{{ item.cliente }}</td>
+        <td>{{ item.cantidad }}</td>
+        <td>$ {{ item.precio }}</td>
+        <td>{{ item.codigo }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}
